@@ -1,0 +1,538 @@
+version: "2.0"
+stories:
+
+#happy
+  
+- story: name_agree day_mood resources_yes articles helped end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: name_disagree day_mood resources_yes articles helped end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+    
+- story: name_agree day_mood resources_yes therapists helped end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+  
+- story: name_disagree day_mood resources_yes therapists helped end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: name_agree day_mood resources_no end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: name_disagree day_mood resources_no end_conv_yes
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+#- story: name_disagree day_mood resources_yes articles helped end_conv_yes
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_happy
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: articles
+#  - action: action_find_articles
+#  - intent: select_article
+#  - action: utter_did_that_help
+#  - intent: agree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+
+#- story: name_disagree day_mood resources_yes therapists helped end_conv_yes
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_happy
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: therapists
+#  - action: action_find_therapists
+#  - intent: select_therapist
+#  - action: utter_did_that_help
+#  - intent: agree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: name_disagree day_mood resources_no
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_happy
+#  - intent: disagree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: name_disagree day_mood resources_yes articles helped end_conv_yes
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_sad
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: articles
+#  - action: action_find_articles
+#  - intent: select_article
+#  - action: utter_did_that_help
+#  - intent: agree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: name_disagree day_mood resources_yes therapists helped end_conv_yes
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_sad
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: therapists
+#  - action: action_find_therapists
+#  - intent: select_therapist
+#  - action: utter_did_that_help
+#  - intent: agree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: name_disagree mood_no resources_no
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_sad
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: Story from Conversation ID a2cad5ebff544bf7b02201460d2f5030
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_sad
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: articles
+#  - action: action_find_articles
+#  - intent: select_article
+#  - action: utter_did_that_help
+#  - intent: disagree
+#  - action: utter_resources
+#  - intent: articles
+#  - action: action_find_articles
+#  - intent: select_article
+#  - action: utter_did_that_help
+#  - intent: agree
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#- story: day_mood resources_none end_conv_yes
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: agree
+#  - action: utter_ask_name
+#  - intent: name
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_happy
+#  - intent: agree
+#  - action: utter_resources
+#  - intent: resources_none
+#  - action: utter_end_conv
+#  - intent: disagree
+#  - action: utter_goodbye
+#
+#- story: Story from Conversation ID 84b5762fcd5e4a9a8687d36fd67142f5
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: disagree
+#  - action: utter_ask_mood
+#  - intent: day_mood
+#  - action: utter_happy
+#  - intent: disagree
+#  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: name
+    entities:
+    - username: ශාමලී
+  - slot_was_set:
+    - username: ශාමලී
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_6
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: resources_none
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_7
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+    entities:
+    - username: නිලමානි
+  - slot_was_set:
+    - username: නිලමානි
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_8
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: නරක
+  - slot_was_set:
+    - mood: නරක
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+    entities:
+    - username: සජීර්
+  - slot_was_set:
+    - username: සජීර්
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_10
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: resources_none
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_11
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: resources_none
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: disagree
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: articles
+  - action: action_find_articles
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: resources_none
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+  - intent: resources_none
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart

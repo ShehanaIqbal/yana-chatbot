@@ -1,0 +1,27 @@
+version: "2.0"
+
+rules:
+
+- rule: Greet anytime the user greets
+  steps:
+  - action: utter_greet
+  - action: utter_want_name
+
+- rule: end_conv_no
+  steps:
+  - action: utter_end_conv
+  - intent: disagree
+  - action: utter_resources
+
+- rule: end session after goodbye
+  steps:
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- rule: resources after reacting
+  steps:
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources

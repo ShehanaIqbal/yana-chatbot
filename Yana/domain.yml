@@ -1,0 +1,80 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 600
+  carry_over_slots_to_new_session: false
+intents:
+- agree
+- disagree
+- day_mood
+- articles
+- therapists
+- greet
+- resources_none
+- name
+- tell_story
+entities:
+- mood
+- username
+slots:
+  username:
+    type: text
+    initial_value: ''
+    influence_conversation: true
+  mood:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: හෙලෝ, ඔබව දැකීමට ලැබීම සතුටක්. මගේ නම යානා. ඔබට සහය වීමට ලබීම ගැන මම ඉතාමත් සතුටු වෙනවා.
+  utter_ask_mood:
+  - condition:
+    - name: username
+      type: slot
+      value: ''
+    text: අද දවස ඔබට කොහොමද? හොද ද? නරක ද?
+  - text: ආයුබෝවන් {username}, අද දවස ඔබට කොහොමද? හොද ද? නරක ද?
+  utter_did_that_help:
+  - text: එය ඔබට සැහැල්ලු වීමට උදව් කරා ද?
+  utter_mood_react:
+  - condition:
+    - name: mood
+      type: slot
+      value: හොද
+    text: අපූරුයි. ඔබගේ මනස තවත් සැහැල්ලු කරන ක්‍රියාවක නිරත වීමට ඔබ කැමතිද?
+  - condition:
+    - name: mood
+      type: slot
+      value: නරක
+    text: මට ඒ ගැන කනගාටුයි. ඔබගේ මනස සැහැල්ලු කරන ක්‍රියාවක නිරත වීමට ඔබ කැමතිද?
+  - text: ඔබගේ මනස සැහැල්ලු කරන ක්‍රියාවක නිරත වීමට ඔබ කැමතිද?
+  utter_goodbye:
+  - text: මාව හමුවූවාට ස්තූතියි, නැවත හමුවෙමු.
+  utter_iamabot:
+  - text: මම යානා. මම ඔබගේ කෘතීම මානසික සුවතා සහායක ලෙස කටයුතු කිරීමට බැදී ඉන්නවා.
+  utter_resources:
+  - buttons:
+    - payload: ලිපි කියවීම.
+      title: ලිපි කියවන්න කැමතියි.
+    - payload: චිකිත්සකයෙකු සමග සම්බන්ධ වීම.
+      title: චිකිත්සකයෙකු සම්බන්ධ කර ගැනීමට කැමතියි.
+    - payload: එකක්වත් නොවේ.
+      title: මින් එකක්වත් නොවේ.
+    text: ඔබගේ මනස නිරවුල් කරගැනීමට උපකාරී විය හැකි දේවල් කිහිපයක් මා සතුව තිබෙනවා. ඔබ මින් යමක් උත්සාහ කිරීමට කැමති නම් කරුනාකර එය තෝරන්න.
+  utter_end_conv:
+  - text: ඔබ මෙම සංවාදය අවසන් කිරීමට කැමතිද??
+  utter_ask_name:
+  - text: ඔබේ නම කුමක්ද?
+  utter_want_name:
+  - text: ඔබගේ නම දැනගනීම මට ඔබ සමග වඩා සුහදශීලීව සන්වාධ කිරීමට උදව් වේවි.ඔබගේ නම කියන්නට ඔබ කැමතිද? (අපි ඔබගේ දත්ත කිසිවක් ස්ථිරව අප සමග තබානොගන්නා බව සලකන්න.)
+actions:
+- action_find_articles
+- action_find_therapists
+- utter_ask_mood
+- utter_ask_name
+- utter_did_that_help
+- utter_end_conv
+- utter_goodbye
+- utter_greet
+- utter_mood_react
+- utter_resources
+- utter_want_name
