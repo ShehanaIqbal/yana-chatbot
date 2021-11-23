@@ -36,7 +36,7 @@ class QueryArticles(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         mood = tracker.get_slot("mood")
-        if mood == 'නරක' or mood == 'හොද':
+        if (mood == 'නරක' or mood == 'හොද'):
             dispatcher.utter_message(text='ඔබට ප්‍රයෝජනවත් වනු ඇතැයි මම සොයා ගත් ලිපි කිහිපයක් පහත දැක්වේ.')
 
             connection = db.create_connection()

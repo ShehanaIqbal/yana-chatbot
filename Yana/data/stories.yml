@@ -536,3 +536,58 @@ stories:
   - intent: agree
   - action: utter_goodbye
   - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+    entities:
+    - username: සීමා
+  - slot_was_set:
+    - username: සීමා
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොන්ද්න්
+  - slot_was_set:
+    - mood: හොන්ද්න්
+  - action: utter_mood_react
+  - intent: disagree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_want_name
+  - intent: agree
+  - action: utter_ask_name
+  - intent: name
+    entities:
+    - username: සමන්
+  - slot_was_set:
+    - username: සමන්
+  - action: utter_ask_mood
+  - intent: day_mood
+    entities:
+    - mood: හොද
+  - slot_was_set:
+    - mood: හොද
+  - action: utter_mood_react
+  - intent: agree
+  - action: utter_resources
+  - intent: therapists
+  - action: action_find_therapists
+  - action: utter_did_that_help
+  - intent: agree
+  - action: utter_end_conv
+  - intent: agree
+  - action: utter_goodbye
+  - action: action_restart

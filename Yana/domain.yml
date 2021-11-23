@@ -3,14 +3,14 @@ session_config:
   session_expiration_time: 600
   carry_over_slots_to_new_session: false
 intents:
-- agree
-- disagree
+- name
 - day_mood
-- articles
 - therapists
 - greet
+- agree
+- disagree
+- articles
 - resources_none
-- name
 - tell_story
 entities:
 - mood
@@ -60,6 +60,8 @@ responses:
     - payload: එකක්වත් නොවේ.
       title: මින් එකක්වත් නොවේ.
     text: ඔබගේ මනස නිරවුල් කරගැනීමට උපකාරී විය හැකි දේවල් කිහිපයක් මා සතුව තිබෙනවා. ඔබ මින් යමක් උත්සාහ කිරීමට කැමති නම් කරුනාකර එය තෝරන්න.
+  utter_didnt_get_you:
+  - text: සමාවෙන්න, මට තේරුනේ නැහැ
   utter_end_conv:
   - text: ඔබ මෙම සංවාදය අවසන් කිරීමට කැමතිද??
   utter_ask_name:

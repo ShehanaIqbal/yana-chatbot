@@ -55,6 +55,8 @@ nlu:
     - හරී, කැමතියි
     - ඕකෙ
     - ඕකේඉ
+    - මට උදව් උනා
+    - ඔව..........
 - intent: disagree
   examples: |
     - නෑ
@@ -101,59 +103,58 @@ nlu:
     - මම [ශාමලී](username)
     - මම [නිලමානි](username)
     - මගෙ නම් [සජීර්](username)
+    - මම තමයි [සීමා](username)
+    - මම [සමන්](username)
 - intent: day_mood
   examples: |
-    - මම [හොදින්](mood)
-    - [හොදින්](mood) ඉන්නවා
-    - [සතුටින්](mood) ඉන්නවා
-    - මම [සතුටින්](mood)
-    - මට [සතුටුයි](mood)
-    - [සතුටින්](mood)
-    - මම [හොදින්](mood) ඉන්නවා
-    - මම [සතුටින්](mood) ඉන්නවා
+    - මම [හොදින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
+    - [හොදින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} ඉන්නවා
+    - [සතුටින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} ඉන්නවා
+    - මම [සතුටින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
+    - මට [සතුටුයි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
+    - [සතුටින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
+    - මම [හොදින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} ඉන්නවා
+    - මම [සතුටින්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} ඉන්නවා
     - [සුපිරියි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
     - [නියමයි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
     - ඉතා [හොදයි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
     - [හොන්දයි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
     - දවස [හොන්දයි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
-    - අද [හොද](mood) දවසක්
-    - අද ගොඩක් [හොද](mood) දවසක්
+    - අද [හොද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
+    - අද ගොඩක් [හොද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - අද ගොඩක් [හොන්ද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - [ලස්සන]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - [නියම]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
-    - මම [දුකෙන්](mood)
-    - [දුකෙන්](mood) ඉන්නවා
-    - [කලකිරිලා](mood) ඉන්නවා
-    - මම [දුකෙන්](mood) ඉන්නේ
-    - මට [දුකයි](mood)
-    - [කලකිරිලා](mood)
-    - මම [දුකෙන්](mood) ඉන්නවා
-    - [දුකයි](mood)
-    - [කලකිරීමෙන්](mood) ඉන්නවා
-    - [කලකිරීමෙන්](mood) ඉන්නේ
-    - මගේ [හිත රිදුනා](mood)
-    - මගේ [හිත රිදිලා](mood)
-    - [හිත රිදුනා](mood)
-    - [නරකයි](mood)
-    - අද [නරක](mood) දවසක්
-    - අද [දුක හිතුන](mood) දවසක්
-    - [දුක](mood) දවසක්
-    - [එපා කරපු](mood) දවසක්
-    - [ජරා](mood) දවසක්
-    - අද [නරක](mood) නෑ
+    - මම [දුකෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - [දුකෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නවා
+    - [කලකිරිලා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නවා
+    - මම [දුකෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නේ
+    - මට [දුකයි]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - [කලකිරිලා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - මම [දුකෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නවා
+    - [දුකයි]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - [කලකිරීමෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නවා
+    - [කලකිරීමෙන්]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} ඉන්නේ
+    - මගේ [හිත රිදුනා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - මගේ [හිත රිදිලා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - [හිත රිදුනා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - [නරකයි]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"}
+    - අද [නරක]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
+    - අද [දුක හිතුන]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
+    - [දුක]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
+    - [එපා කරපු]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
+    - [ජරා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
+    - අද [නරක]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} නෑ
     - අද [ලස්සන]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - අද [නියම]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - අද මට [හොන්ද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - [ජරා]{"entity": "mood", "value": "\u0db1\u0dbb\u0d9a"} දවසක්
     - අඩ [නියම]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} ඩවසක් තමය්
-    - හොන්ඩය්
+    - [හොන්ඩය්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
     - [හොන්ද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"} දවසක්
     - [හොන්ද]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
-- intent: tell_story
-  examples: |
-    - මම අද ගමනක් ගියා.
-    - මට බැන්නා.
-    - මට තරහා ගියා.
+    - මම [හොන්ද්න්]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
+    - අද [සුපිරියි]{"entity": "mood", "value": "\u0dc4\u0ddc\u0daf"}
 - intent: articles
   examples: |
     - ලිපි කියවන්න කැමතියි.
@@ -201,6 +202,9 @@ nlu:
     - දුක හිතුන
     - හිත රිදිලා
     - දුකයි
+    - දුකින්
+    - ඩුකින්
+    - ඩුක
     - දුකෙන්
 - synonym: ඔව්
   examples: |

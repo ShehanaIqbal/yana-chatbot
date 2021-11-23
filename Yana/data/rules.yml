@@ -25,3 +25,14 @@ rules:
   - action: utter_mood_react
   - intent: agree
   - action: utter_resources
+
+- rule: listen after restarting
+  steps:
+    - action: action_restart
+    - action: action_listen
+
+- rule: if fallback intent
+  steps:
+    - intent: nlu_fallback
+    - action: utter_didnt_get_you
+    - action: utter_end_conv
