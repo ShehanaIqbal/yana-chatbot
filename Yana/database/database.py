@@ -58,6 +58,9 @@ def select_all_therapists(conn):
 
 
 def create_tables(conn):
+    cur = conn.cursor()
+    cur.execute("DROP TABLE article;")
+    cur.execute("DROP TABLE therapist")
     cur1 = conn.cursor()
     cur1.execute("CREATE TABLE IF NOT EXISTS article (title text, resource text, mood text)")
 
@@ -74,8 +77,8 @@ def create_tables(conn):
 
 connection = create_connection()
 create_tables(connection)
-
-
+for r in connection.cursor().execute("SELECT * FROM article").fetchall():
+    print (r)
 def create_connection():
     # create_tables(connection)
     return connection
